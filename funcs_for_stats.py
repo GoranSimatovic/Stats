@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import random
 
+
 def get_list_from_dist_gen(n, gen):
 
     output_list = []
@@ -22,7 +23,6 @@ def pseudo_norm_sample():
 def pseudo_exp_sample():
 
     yield -np.log(np.random.uniform(0, 1))
-
 
 
 def get_sampled(n_samples, sub_sample_size, population_df):
