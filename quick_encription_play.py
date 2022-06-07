@@ -23,27 +23,32 @@ def ceaser_cypher_a_string(input_string, shift_size):
     return ''.join([ceasers_shift(x, shift_size) for x in input_string])
 
 
-shift = 4  # Caesar did A->D shift
-text = 'hello world'
+
+if __name__ == '__main__':
+
+    shift = 4  # Caesar did A->D shift
+    text = 'hello world'
 
 
-print(f'The input message is:\n' +
-      text
-      )
+    print(f'The input message is:\n' +
+        text
+        )
 
-print(f'The encrypted message is:\n' +
-      ceaser_cypher_a_string(text, -shift)
-      )
+    print(f'The encrypted message is:\n' +
+        ceaser_cypher_a_string(text, -shift)
+        )
 
-print(f'The decrypted message is:\n' +
-      ceaser_cypher_a_string(
-          ceaser_cypher_a_string(text, shift),
-          -shift)
-      )
+    print(f'The decrypted message is:\n' +
+        ceaser_cypher_a_string(
+            ceaser_cypher_a_string(text, shift),
+            -shift)
+        )
 
-do_alphabet_test = True
+    do_alphabet_test = True
 
-if do_alphabet_test:
-    print(ceaser_cypher_a_string(
-            ceaser_cypher_a_string(string.ascii_lowercase, shift),
-            -shift))
+    if do_alphabet_test:
+
+        print('Performing aphabet test:\n' +
+            ceaser_cypher_a_string(
+                ceaser_cypher_a_string(string.ascii_lowercase, shift),
+                -shift))
